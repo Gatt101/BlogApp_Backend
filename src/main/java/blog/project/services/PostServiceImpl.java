@@ -18,19 +18,20 @@ public class PostServiceImpl implements PostService{
     }
 
     @Override
-    public void deletePost(String title) {
-
+    public String deletePost(Post post) {
+        repo.delete(post);
+        return "Post deleted";
     }
 
     @Override
-    public void updatePost(String title, String content, String author) {
-
+    public Post updatePost(Post post) {
+        return repo.save(post);
     }
 
     @Override
-    public Post getPost(String title) {
+    public Post getPost(String id) {
 
-        return repo.findByTitle(title).orElse(null);
+        return repo.findById(id).orElse(null);
     }
 
     @Override

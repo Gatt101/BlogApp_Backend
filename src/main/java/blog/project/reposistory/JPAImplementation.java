@@ -9,5 +9,5 @@ import java.util.Optional;
 
 @Repository
 public interface JPAImplementation extends MongoRepository<Post, Long> {
-    Optional<Post> findByTitle(String title);
+    Optional<Post> findById(String id);
 }
