@@ -30,7 +30,6 @@ public class PostServiceImpl implements PostService{
 
     @Override
     public Post getPost(String id) {
-
         return repo.findById(id).orElse(null);
     }
 
